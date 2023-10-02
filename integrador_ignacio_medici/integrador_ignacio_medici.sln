@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "integrador_ignacio_medici", "integrador_ignacio_medici\integrador_ignacio_medici.csproj", "{6ED7623E-916C-4904-BE91-2B40563915A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{622A0508-9982-470C-878F-44A29A219DA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ED7623E-916C-4904-BE91-2B40563915A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED7623E-916C-4904-BE91-2B40563915A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED7623E-916C-4904-BE91-2B40563915A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED7623E-916C-4904-BE91-2B40563915A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{622A0508-9982-470C-878F-44A29A219DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622A0508-9982-470C-878F-44A29A219DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622A0508-9982-470C-878F-44A29A219DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622A0508-9982-470C-878F-44A29A219DA5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF681E9D-AEBA-4C19-BFCC-F009125D7779}
+	EndGlobalSection
+EndGlobal
