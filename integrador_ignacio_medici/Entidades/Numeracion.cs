@@ -38,26 +38,19 @@ namespace Entidades
             return valorDecimal;
         }
 
-        
         public string ConvertirA(ESistema sistema)
         {
 
             string retorno = string.Empty;
 
-            if (this.Sistema == sistema)
+
+            if (sistema == ESistema.Decimal)
             {
-                retorno = this.ValorNumerico;
+                retorno = this.BinarioADecimal(this.ValorNumerico).ToString();
             }
             else
             {
-                if (ESistema.Decimal == sistema)
-                {
-                    retorno = this.BinarioADecimal(this.ValorNumerico).ToString();
-                }
-                else 
-                {
-                    retorno = this.DecimalABinario(this.ValorNumerico);
-                }
+                retorno = this.DecimalABinario(this.ValorNumerico);
             }
             return retorno;
         }
@@ -66,9 +59,9 @@ namespace Entidades
 
         private void InicializarValores(string valor, ESistema sistema)
         {
-            if (EsBinario(valor))
-            {
-                double.TryParse(this.ConvertirA(sistema),out double valorParsed);
+            if (sistema == ESistema.Binario)
+            { 
+                double.TryParse(valor,out double valorParsed);
                 this.valorNumerico = valorParsed;
                 this.sistema = sistema;
             }
@@ -82,7 +75,6 @@ namespace Entidades
             {
                 this.valorNumerico = double.MinValue;
             }
-
         }
 
         private string DecimalABinario(int valor)
@@ -100,8 +92,7 @@ namespace Entidades
 
         private string DecimalABinario(string valor)
         {
-
-            if(int.TryParse(valor, out int valorDecimal))
+            if (int.TryParse(valor, out int valorDecimal))
             {
                 return this.DecimalABinario(valorDecimal);
             }
@@ -149,7 +140,8 @@ namespace Entidades
         }
         public static Numeracion operator+(Numeracion n1,Numeracion n2)
         {
-            double aux1, aux2;
+            double aux1;
+            double aux2;
 
             double.TryParse(n1.ValorNumerico, out aux1);
             double.TryParse(n2.ValorNumerico, out aux2);
@@ -158,7 +150,8 @@ namespace Entidades
         }
         public static Numeracion operator-(Numeracion n1, Numeracion n2)
         {
-            double aux1, aux2;
+            double aux1;
+            double aux2;
 
             double.TryParse(n1.ValorNumerico, out aux1);
             double.TryParse(n2.ValorNumerico, out aux2);
@@ -167,7 +160,8 @@ namespace Entidades
         }
         public static Numeracion operator*(Numeracion n1, Numeracion n2)
         {
-            double aux1, aux2;
+            double aux1; 
+            double aux2;
 
             double.TryParse(n1.ValorNumerico, out aux1);
             double.TryParse(n2.ValorNumerico, out aux2);
@@ -176,7 +170,8 @@ namespace Entidades
         }
         public static Numeracion operator/(Numeracion n1, Numeracion n2)
         {
-            double aux1, aux2;
+            double aux1;
+            double aux2;
 
             double.TryParse(n1.ValorNumerico, out aux1);
             double.TryParse(n2.ValorNumerico, out aux2);

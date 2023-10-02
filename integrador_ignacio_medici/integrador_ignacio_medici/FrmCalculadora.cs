@@ -55,18 +55,15 @@ namespace integrador_ignacio_medici
             this.segundoOperando = new Numeracion(this.txtSegundoOperador.Text, this.sistema);
 
             this.calculadora = new Operacion(this.primerOperando, this.segundoOperando);
-
             
             this.setResultado();
-
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtPrimerOperador.Clear();
             txtSegundoOperador.Clear();
-            lblResultadoOperacion.Text = null;
-            rdbDecimal.Checked = true;
+            lblResultadoOperacion.Text = string.Empty;
             cmbOperacion.SelectedIndex = 0;
         }
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -77,11 +74,13 @@ namespace integrador_ignacio_medici
         private void rdbDecimal_CheckedChanged(object sender, EventArgs e)
         {
             this.sistema = ESistema.Decimal;
+            
         }
 
         private void rdbBinario_CheckedChanged(object sender, EventArgs e)
         {
             this.sistema = ESistema.Binario;
+            
         }
         
         private void setResultado()
@@ -90,8 +89,14 @@ namespace integrador_ignacio_medici
             {
                 this.resultado = new Numeracion(this.calculadora.Operar(operadorSeleccionado).ValorNumerico, this.sistema);
 
-
-                lblResultadoOperacion.Text = this.resultado.ValorNumerico;
+                if (sistema == ESistema.Decimal)
+                {
+                    lblResultadoOperacion.Text = this.resultado.ValorNumerico;
+                }
+                else
+                {
+                    lblResultadoOperacion.Text = this.resultado.ConvertirA(this.sistema);
+                }
             }
             else
             {
